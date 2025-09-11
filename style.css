@@ -3,9 +3,17 @@
   font-family: 'Archivo', sans-serif;
 }
 
+/* Background grid pattern */
+.bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
 /* Step sequence numbers with gradient text */
 .sequence-number {
-  @apply absolute left-0 font-semibold;
+  position: absolute;
+  left: 0;
+  font-weight: 600;
   top: -1.75rem;
   background: linear-gradient(to bottom, #68A9FF, #4191FC);
   -webkit-background-clip: text;
@@ -17,13 +25,16 @@
 
 /* Vertical decorative lines */
 .vertical-line {
-  @apply absolute h-full bg-white/15;
+  position: absolute;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
   width: 0.0625rem;
 }
 
 /* Horizontal decorative lines */
 .horizontal-line {
-  @apply absolute bg-white/15;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.15);
   height: 0.0625rem;
   width: 50vw;
   left: -0.8125rem;
@@ -31,12 +42,16 @@
 
 /* Section divider line */
 .section-divider {
-  @apply absolute top-0 bottom-0 w-px bg-white/15;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Chat interface with gradient border wrapper */
 .chat-interface {
-  @apply z-20;
+  z-index: 20;
   background: linear-gradient(45deg, #F5F6F6, #68A9FF, #F5F6F6);
   border-radius: 1.5rem;
   padding: 0.5rem;
@@ -78,7 +93,9 @@
 
 /* Step container */
 .step-item {
-  @apply relative flex flex-col;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   width: 100%;
   max-width: 36.125rem;
@@ -86,12 +103,13 @@
 
 /* Step divider */
 .step-divider {
-  @apply border-t border-[#68A9FF];
+  border-top: 1px solid #68A9FF;
   margin-top: 1rem;
-  width: 39.125rem;
+  width: 50vw;
+  max-width: 39.125rem;
 }
 
-/* Responsive typography */
+/* Responsive typography and layout */
 @media (max-width: 768px) {
   .step-item h2 {
     font-size: clamp(1.125rem, 4vw, 1.5rem);
@@ -101,5 +119,20 @@
   .step-item p {
     font-size: clamp(0.875rem, 3vw, 1rem);
     line-height: clamp(1.25rem, 4vw, 1.625rem);
+  }
+
+  .sequence-number {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: clamp(1.25rem, 5vw, 2rem);
+    top: -1.25rem;
+  }
+
+  .section-divider {
+    display: none;
+  }
+
+  .vertical-line,
+  .horizontal-line {
+    display: none;
   }
 }
