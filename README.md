@@ -1,3 +1,6 @@
+<img width="562" height="288" alt="image" src="https://github.com/user-attachments/assets/021c31c9-6c2d-4813-b177-62431dbb64cb" />
+
+
 # Alex AI - Camera & Gear Recommendation Landing Page
 
 A responsive landing page showcasing how Alex AI works - an AI assistant that provides personalized camera and gear recommendations based on video content and expert knowledge.
